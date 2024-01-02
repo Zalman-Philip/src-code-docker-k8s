@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: store-client-configmap
+  namespace: store
+data:
+  BASE_URL: "http://localhost/store/api"
+  BNR_URL: "http://localhost/banners"

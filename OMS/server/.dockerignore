@@ -1,0 +1,6 @@
+node_modules/
+**/*test.*
+**/__tests__/
+**/tests/
+**/__test__/
+**/test/

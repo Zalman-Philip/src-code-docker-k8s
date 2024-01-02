@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: erp-client-deployment
+  namespace: erp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: erp-client
+  template:
+    metadata:
+      labels:
+        app: erp-client
+    spec:
+      containers:
+        - name: erp-client
+          image: erp-client:1.0.0 #replace with the image that you build
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: erp-client-configmap
